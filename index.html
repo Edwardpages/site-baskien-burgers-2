@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baskien Burgers 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        :root {
+            --primary: #4A7C59;
+            --secondary: #2D5A3D;
+            --accent: #F4A261;
+            --nav-bg: rgba(255,255,255,0.2);
+            --nav-blur: 10px;
+        }
+        body,html{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#333}
+        a{text-decoration:none;color:inherit}
+        .glass {
+            background: var(--nav-bg);
+            backdrop-filter: blur(var(--nav-blur));
+            -webkit-backdrop-filter: blur(var(--nav-blur));
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+        header{position:sticky;top:0;z-index:1000;width:100%;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+        nav ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0}
+        nav ul li a{color:#fff;font-weight:600}
+        .hero{position:relative;height:100vh;background:url('https://loremflickr.com/1600/900/burger') center/cover no-repeat;}
+        .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);}
+        .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;z-index:1;padding:0 2rem;}
+        .hero-content h1{font-size:3rem;margin-bottom:.5rem}
+        .hero-content p{font-size:1.2rem;margin-bottom:1.5rem}
+        .pill-btn{background:var(--accent);color:#fff;padding:.8rem 1.5rem;border-radius:999px;margin:0 .5rem;transition:background .3s}
+        .pill-btn:hover{background:#e78c4a}
+        section{padding:4rem 2rem}
+        .section-title{font-size:2rem;margin-bottom:2rem;text-align:center;color:var(--primary)}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+        .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+        .card img{width:100%;height:auto;display:block}
+        .card-body{padding:1rem}
+        .footer{background:#111;color:#ccc;padding:3rem 2rem}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
+        .footer a{color:#ccc}
+        .form-input{width:100%;padding:.8rem;border:1px solid #ccc;border-radius:4px;margin-bottom:1rem}
+        .form-btn{background:var(--primary);color:#fff;padding:.8rem 1.5rem;border:none;border-radius:4px;cursor:pointer}
+        .form-btn:hover{background:#3e5e48}
+    </style>
+</head>
+<body>
+    <!-- Sticky Glassmorphism Nav -->
+    <header class="glass">
+        <div class="logo"><strong>Baskien Burgers 2</strong></div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Baskien Burgers 2</h1>
+            <p>Delicious burgers made with love and the freshest ingredients.</p>
+            <div>
+                <a href="#booking" class="pill-btn">Book a Table</a>
+                <a href="#menu" class="pill-btn">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Menu Section -->
+    <section id="services">
+        <h2 class="section-title">Our Burgers</h2>
+        <div class="grid-3">
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Classic Beef Burger">
+                <div class="card-body">
+                    <h3>Classic Beef Burger</h3>
+                    <p>Juicy beef patty, lettuce, tomato, cheese and our special sauce.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Chicken Avocado Burger">
+                <div class="card-body">
+                    <h3>Chicken Avocado Burger</h3>
+                    <p>Grilled chicken breast, ripe avocado, crisp lettuce and a lime mayo.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Veggie Delight Burger">
+                <div class="card-body">
+                    <h3>Veggie Delight Burger</h3>
+                    <p>Spiced veggie patty, roasted peppers, spinach and a tangy yogurt sauce.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="grid-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;align-items:center;">
+            <img src="https://loremflickr.com/700/500/burger" alt="Our Kitchen" style="width:100%;border-radius:12px;">
+            <div>
+                <p>At Baskien Burgers 2 we believe a great burger starts with great ingredients. Our team sources locally where possible and grills each patty to perfection.</p>
+                <p>Whether you're after a quick bite or a relaxed dinner, our cosy venue offers a welcoming atmosphere for families, friends and solo diners alike.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Appointments -->
+    <section id="booking" style="background:#f4f4f4;">
+        <h2 class="section-title">Reserve a Table</h2>
+        <div class="grid-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;">
+            <form>
+                <input type="text" class="form-input" placeholder="Your Name" required>
+                <input type="email" class="form-input" placeholder="Email Address" required>
+                <input type="tel" class="form-input" placeholder="Phone Number">
+                <input type="date" class="form-input" required>
+                <input type="time" class="form-input" required>
+                <select class="form-input" required>
+                    <option value="">Number of Guests</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5+</option>
+                </select>
+                <button type="submit" class="form-btn">Book Now</button>
+            </form>
+            <div>
+                <h3>Opening Hours</h3>
+                <ul style="list-style:none;padding:0;">
+                    <li>Mon – Fri: 11:00 – 22:00</li>
+                    <li>Sat: 12:00 – 23:00</li>
+                    <li>Sun: 12:00 – 20:00</li>
+                </ul>
+                <h3>Map & Directions</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section id="pricing">
+        <h2 class="section-title">Pricing</h2>
+        <div class="grid-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;">
+            <div class="card" style="text-align:center;">
+                <div class="card-body">
+                    <h3>Standard</h3>
+                    <p>£8 – £12 per burger</p>
+                    <p>Includes classic sides.</p>
+                </div>
+            </div>
+            <div class="card" style="text-align:center;">
+                <div class="card-body">
+                    <h3>Family Pack</h3>
+                    <p>£35 – 4 Burgers + 2 Sides</p>
+                </div>
+            </div>
+            <div class="card" style="text-align:center;">
+                <div class="card-body">
+                    <h3>Deluxe</h3>
+                    <p>£15 – Premium ingredients + extra toppings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-body">
+                    <p>"Best burger in town! The beef is always perfectly cooked."</p>
+                    <p><strong>– Emma J.</strong></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p>"Loved the veggie burger – flavourful and hearty."</p>
+                    <p><strong>– Liam S.</strong></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p>"Great atmosphere and friendly staff. Highly recommend!"</p>
+                    <p><strong>– Sophie K.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background:#f9f9f9;">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <details style="margin-bottom:1rem;">
+            <summary>Do you offer vegetarian options?</summary>
+            <p>Yes, we have a Veggie Delight Burger and other plant‑based sides.</p>
+        </details>
+        <details style="margin-bottom:1rem;">
+            <summary>Can I host a private event?</summary>
+            <p>Absolutely! Contact us to discuss capacity and menu options.</p>
+        </details>
+        <details style="margin-bottom:1rem;">
+            <summary>Do you provide takeaway?</summary>
+            <p>Yes, both dine‑in and takeaway orders are available.</p>
+        </details>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <div class="grid-3">
+            <img src="https://loremflickr.com/600/400/burger" alt="Gallery Image 1" style="width:100%;border-radius:8px;">
+            <img src="https://loremflickr.com/600/400/burger" alt="Gallery Image 2" style="width:100%;border-radius:8px;">
+            <img src="https://loremflickr.com/600/400/burger" alt="Gallery Image 3" style="width:100%;border-radius:8px;">
+            <img src="https://loremflickr.com/600/400/burger" alt="Gallery Image 4" style="width:100%;border-radius:8px;">
+            <img src="https://loremflickr.com/600/400/burger" alt="Gallery Image 5" style="width:100%;border-radius:8px;">
+            <img src="https://loremflickr.com/600/400/burger" alt="Gallery Image 6" style="width:100%;border-radius:8px;">
+        </div>
+    </section>
+
+    <!-- Team / Staff Profiles -->
+    <section id="team">
+        <h2 class="section-title">Meet The Team</h2>
+        <div class="grid-3">
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/burger" alt="Chef Alex">
+                <div class="card-body">
+                    <h3>Alex – Head Chef</h3>
+                    <p>Passionate about grilling the perfect patty.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/burger" alt="Sophie – Manager">
+                <div class="card-body">
+                    <h3>Sophie – Manager</h3>
+                    <p>Ensures every guest feels welcome.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/burger" alt="Mia – Server">
+                <div class="card-body">
+                    <h3>Mia – Server</h3>
+                    <p>Delivers friendly service with a smile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / News Section -->
+    <section id="blog">
+        <h2 class="section-title">Latest News</h2>
+        <div class="grid-3">
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Blog 1">
+                <div class="card-body">
+                    <h3>Seasonal Burger Launch</h3>
+                    <p>Discover our new autumn-inspired flavours.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Blog 2">
+                <div class="card-body">
+                    <h3>Community Charity Night</h3>
+                    <p>Join us to support local charities.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Blog 3">
+                <div class="card-body">
+                    <h3>Behind the Scenes: Our Kitchen</h3>
+                    <p>A look at how we craft each burger.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Shop / Product Listings -->
+    <section id="shop" style="background:#f9f9f9;">
+        <h2 class="section-title">Shop Our Merch</h2>
+        <div class="grid-3">
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="T‑Shirt">
+                <div class="card-body">
+                    <h3>Baskien T‑Shirt</h3>
+                    <p>£20</p>
+                    <button class="form-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Mug">
+                <div class="card-body">
+                    <h3>Logo Mug</h3>
+                    <p>£12</p>
+                    <button class="form-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/280/burger" alt="Cap">
+                <div class="card-body">
+                    <h3>Chef’s Cap</h3>
+                    <p>£15</p>
+                    <button class="form-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section id="newsletter" style="background:var(--primary);color:#fff;">
+        <h2 class="section-title">Stay Updated</h2>
+        <form style="max-width:500px;margin:auto;text-align:center;">
+            <input type="email" class="form-input" placeholder="Enter your email" required style="background:#fff;color:#000;">
+            <button type="submit" class="form-btn">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- YouTube Channel -->
+    <section id="videos" style="padding:4rem 2rem;text-align:center;">
+        <h2 class="section-title">Our YouTube Channel</h2>
+        <p style="color:var(--muted,#6b7280);margin-bottom:1.5rem;">Watch us in action — behind the scenes, new menu drops, and more.</p>
+        <a href="#" style="display:inline-flex;align-items:center;gap:0.75rem;background:#FF0000;color:#fff;padding:0.9rem 2rem;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+            Watch on YouTube
+        </a>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="grid-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;">
+            <form>
+                <input type="text" class="form-input" placeholder="Your Name" required>
+                <input type="email" class="form-input" placeholder="Email Address" required>
+                <textarea class="form-input" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="form-btn">Send Message</button>
+            </form>
+            <div>
+                <h3>Contact Details</h3>
+                <p>Phone: 01234 567890</p>
+                <p>Email: info@baskienburgers2.co.uk</p>
+                <p>Address: 123 Burger Lane, Foodtown</p>
+                <h3>Opening Hours</h3>
+                <p>Mon‑Fri: 11:00 – 22:00</p>
+                <p>Sat: 12:00 – 23:00</p>
+                <p>Sun: 12:00 – 20:00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>About</h4>
+                <p>Baskien Burgers 2 serves premium burgers crafted with love.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul style="list-style:none;padding:0;">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Menu</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>Instagram | Facebook | Twitter</p>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:2rem;">© 2026 Baskien Burgers 2. All rights reserved.</p>
+    </footer>
+</body>
+</html>
