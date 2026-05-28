@@ -1,0 +1,11 @@
+{
+  "business": "Baskien Burgers 2",
+  "type": "Burger restaurant",
+  "slug": "baskien-burgers-2",
+  "files": [
+    "index.html",
+    "style.css",
+    "script.js"
+  ],
+  "model": "llama-3.3-70b-versatile"
+}
